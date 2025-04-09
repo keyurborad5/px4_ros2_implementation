@@ -1,5 +1,12 @@
 # PX4 ROS2 Implementation
-This guide is designed to assist you in starting and utilizing a ROS 2 Gazebo Harmonic simulation for practicing autonomy, control, and visual perception tasks. While the PX4 Gazebo simulation may not be optimal for algorithms such as optical flow or feature point extraction, it performs adequately for Apriltag and object detection in addition to basic autonomy. 
+This guide is designed to assist you in starting and utilizing a ROS 2 Gazebo Harmonic simulation for practicing autonomy, control, and visual perception tasks. While the PX4 Gazebo simulation may not be optimal for algorithms such as optical flow or feature point extraction, it performs adequately for Apriltag and object detection in addition to basic autonomy.
+
+## Drone Implementation
+1. Circular path facing inwards 
+    ![Drone_video1](drone_flight3.gif)
+2. Circular path and sinusoildal altitude varying
+    ![Drone_video1](drone_flight2.gif)
+
 
 ## Simulation Prerequisites and Downloads:
 ### PX4 Simulator
