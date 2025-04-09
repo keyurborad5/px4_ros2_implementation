@@ -25,6 +25,8 @@ find_package(px4_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rclpy REQUIRED)
+find_package(tf2_ros REQUIRED)
+
 
 #################
 # Setup targets #
@@ -59,8 +61,14 @@ target_include_directories(frame_transforms PUBLIC
 # examples/offboard/offboard_control
 # add_executable(offboard_control src/examples/offboard/offboard_control_enae788m.cpp)
 add_executable(offboard_control src/examples/offboard/offboard_control_circular_8.cpp)
+add_executable(follow_apriltag src/examples/offboard/follow_apriltag.cpp)
+
+
 
 # add_executable(offboard_control src/examples/offboard/offboard_control.cpp)
+ament_target_dependencies(follow_apriltag rclcpp px4_msgs geometry_msgs sensor_msgs tf2_ros)
+install(TARGETS follow_apriltag DESTINATION lib/${PROJECT_NAME})
+
 ament_target_dependencies(offboard_control rclcpp px4_msgs)
 install(TARGETS offboard_control DESTINATION lib/${PROJECT_NAME})
 
@@ -75,7 +83,7 @@ install(TARGETS offboard_control DESTINATION lib/${PROJECT_NAME})
 ############
 
 # Export information to downstream packages
-ament_export_dependencies(ament_cmake rclcpp rosidl_default_runtime eigen3_cmake_module Eigen3 px4_msgs geometry_msgs sensor_msgs)
+ament_export_dependencies(ament_cmake rclcpp rosidl_default_runtime eigen3_cmake_module Eigen3 px4_msgs geometry_msgs sensor_msgs tf2_ros)
 
 ament_export_targets(export_frame_transforms HAS_LIBRARY_TARGET)
 
