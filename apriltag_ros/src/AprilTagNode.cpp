@@ -236,7 +236,9 @@ void AprilTagNode::onCamera(const sensor_msgs::msg::Image::ConstSharedPtr& msg_i
         // 3D orientation and position
         if(estimate_pose != nullptr && calibrated) {
             geometry_msgs::msg::TransformStamped tf;
-            tf.header = msg_img->header;
+            //tf.header = msg_img->header;
+            tf.header.stamp=this->get_clock()->now();
+            tf.header.frame_id=msg_img->header.frame_id;
             // set child frame name by generic tag name or configured tag name
             tf.child_frame_id = tag_frames.count(det->id) ? tag_frames.at(det->id) : std::string(det->family->name) + ":" + std::to_string(det->id);
             const double size = tag_sizes.count(det->id) ? tag_sizes.at(det->id) : tag_edge_size;
