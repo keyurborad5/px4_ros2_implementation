@@ -48,10 +48,10 @@
  #include <chrono>
  #include <iostream>
  
- #define FLIGHT_ALTITUDE -1.5f
+ #define FLIGHT_ALTITUDE -6.50f
  #define RATE            20  // loop rate hz
- #define RADIUS          1.0 // radius of figure 8 in meters
- #define CYCLE_S         40   // time to complete one figure 8 cycle in seconds
+ #define RADIUS          6.00 // radius of figure 8 in meters
+ #define CYCLE_S         20   // time to complete one figure 8 cycle in seconds
  #define STEPS           (CYCLE_S*RATE) // Hence Total number of steps in the path is 400
  
  #define PI  3.14159265358979323846264338327950
@@ -285,7 +285,7 @@
         path[i].acceleration[2] = -0.5*sin(theta);
     
         // Yaw angle to always face the center of the circle
-        path[i].yaw = atan2(path[i].position[1], -path[i].position[0])+PI/6;  // Always facing center
+        path[i].yaw = atan2(-path[i].position[1], -path[i].position[0])+PI/6;  // Always facing center
     }
     
     // Compute Yaw Rate (Dirty Differentiation)
