@@ -8,6 +8,9 @@ This guide is designed to assist you in starting and utilizing a ROS 2 Gazebo Ha
     ![Drone_video1](drone_flight2.gif)
 3. Following AprilTag
     ![Follow_apriltag](follow_apriltag.gif)
+4. Simulation of Following Apriltag
+    ![Follow_apriltag](simu_follow_apriltag.gif)
+
 
 
 ## Simulation Prerequisites and Downloads:
